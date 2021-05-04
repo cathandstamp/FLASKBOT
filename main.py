@@ -11,6 +11,15 @@ from linebot.models import (
 )
 import os
 
+###ここから追加
+import pya3rt
+apikey = "DZZO7R4UhHZIvhcASPfHOiGoeFVcD1gj" #自分のAPIキーを設定する
+client = pya3rt.TalkClient(apikey)
+###ここまで
+
+
+
+
 app = Flask(__name__)
 
 #環境変数取得
@@ -55,11 +64,20 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+
+        #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+        while words!="":
+            response = client.talk(words)
+            TextSendMessage(("Bot >"+((response['results'])[0])['reply'])) #ここでオウム返しのメッセージを返します。
+            words = (text=event.message.text)
+    )
+
 
 # ポート番号の設定
 if __name__ == "__main__":
 #    app.run()
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
+
 
