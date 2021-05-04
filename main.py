@@ -66,10 +66,10 @@ def handle_message(event):
         event.reply_token,
 
         #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
-          while words!="":
-              response = client.talk(words)
-              TextSendMessage("Bot >"+((response['results'])[0])['reply'])
-              words = event.message.text
+        while words!="":              
+            response = client.talk(words)
+            TextSendMessage("Bot >"+((response['results'])[0])['reply'])
+            words = event.message.text
     )
 
 
