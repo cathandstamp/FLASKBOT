@@ -63,17 +63,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     line_bot_api.reply_message(
-        event.reply_token,
+        event.reply_token,        
+        TextSendMessage(text2)) #ここでオウム返しのメッセージを返します。
 
-        #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
-        while words!="":              
-            response = client.talk(words)
-            TextSendMessage("Bot >"+((response['results'])[0])['reply'])
-            words = event.message.text
-    )
-
-
-
+def text2():
+    words = event.message.text
+    text2 = client.talk(words)
+    
+    
 
 # ポート番号の設定
 if __name__ == "__main__":
