@@ -13,12 +13,6 @@ import os
 
 ###ここから追加
 import pya3rt
-apikey = "DZZO7R4UhHZIvhcASPfHOiGoeFVcD1gj" #自分のAPIキーを設定する
-client = pya3rt.TalkClient(apikey)
-###ここまで
-
-
-
 
 app = Flask(__name__)
 
@@ -62,15 +56,18 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    ai_message = talk_ai(event.message.text)
     line_bot_api.reply_message(
-        event.reply_token,        
-        TextSendMessage(text2)) #ここでオウム返しのメッセージを返します。
+        event.reply_token,
+        #TextSendMessage(text=event.message.txt))
+        #（修正）ai_messageを返すようにする
+        TextSendMessage(text=ai_message))
 
-def text2():
-    words = event.message.text
-    text2 = client.talk(words)
-    
-    
+def talk_ai(word):
+    apikey = "DZZO7R4UhHZIvhcASPfHOiGoeFVcD1gj"
+    client = pya3rt.TalkClient(apikey)
+    reply_message = client.talk(word)
+    return reply_message['results'][0]['reply']
 
 # ポート番号の設定
 if __name__ == "__main__":
