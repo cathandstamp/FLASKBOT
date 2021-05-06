@@ -68,14 +68,14 @@ def handle_message(event):
     if push_text == "天気":
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
+
         soup = BeautifulSoup(res.text, "html.parser")
         #print(soup)
 
         found = soup.find_all('p',class_='weather-telop')
         found2 = soup.find_all('h3',class_='left-style')
 
-        textA = found2[1].text + found[1].text %n found2[0].text + found[0].text
-        reply_text =  textA
+        textA = found2[0].text + found[0].text +'\n'+found2[1].text + found[1].text
 
         """
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
