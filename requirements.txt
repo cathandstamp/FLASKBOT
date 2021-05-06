@@ -2,3 +2,4 @@ Flask==1.1.2
 line-bot-sdk==1.19.0
 pya3rt==1.1
 requests==2.12.4
+beautifulsoup4==4.9.3

@@ -12,7 +12,7 @@ from linebot.models import (
 import os
 import requests
 import pprint
-
+from bs4 import BeautifulSoup
 
 
 ###ここから追加
@@ -66,12 +66,29 @@ def handle_message(event):
 
 
     if push_text == "天気":
+        
+        url = 'https://tenki.jp/forecast/9/46/8610/43100/'
+        res = requests.get(url)
+
+        soup = BeautifulSoup(res.text, "html.parser")
+        #print(soup)
+
+        found = soup.find('p',class_='weather-telop')
+        found2 = soup.find('h3',class_='left-style')
+
+        textA = found2.text + found.text
+
+        reply_text =  textA
+
+        
+        '''
         url = 'https://tenki.jp/forecast/9/46/8610/43100/10days.html'
         response = requests.get(url)
         AA=(response.text[:500])
 
-        reply_text = AA #'https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000'
-        
+        reply_text = AA 
+        ###'https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000'
+        '''
 
     else:
         reply_text = ai_message   
