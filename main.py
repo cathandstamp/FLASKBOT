@@ -75,7 +75,7 @@ def handle_message(event):
             print(weather_date + ':' + weather_forecasts)
         reply_text = api_data["description"]["text"]
         """
-        reply_text = 'https://tenki.jp/forecast/9/46/8610/43100/10days.html'
+        reply_text = 'https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000'
         
 
     else:
