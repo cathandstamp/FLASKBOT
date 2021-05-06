@@ -76,7 +76,7 @@ def handle_message(event):
         found2 = soup.find_all('h3',class_='left-style')
 
         textA = found2[0].text + found[0].text +'\n'+found2[1].text + found[1].text
-
+        reply_text =  textA
         """
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
