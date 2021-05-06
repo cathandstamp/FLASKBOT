@@ -66,16 +66,11 @@ def handle_message(event):
 
 
     if push_text == "天気":
-        """
-        url = 'http://weather.livedoor.com/forecast/webservice/json/v1?city=130010'
-        api_data = requests.get(url).json()
-        for weather in api_data['forecasts']:
-            weather_date = weather['dateLabel']
-            weather_forecasts = weather['telop']
-            print(weather_date + ':' + weather_forecasts)
-        reply_text = api_data["description"]["text"]
-        """
-        reply_text = 'https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000'
+        url = 'https://tenki.jp/forecast/9/46/8610/43100/10days.html'
+        response = requests.get(url)
+        AA=(response.text[:500])
+
+        reply_text = AA #'https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000'
         
 
     else:
