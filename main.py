@@ -10,6 +10,10 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 import os
+import requests
+import pprint
+
+
 
 ###ここから追加
 import pya3rt
@@ -62,6 +66,7 @@ def handle_message(event):
 
 
     if push_text == "天気":
+        """
         url = 'http://weather.livedoor.com/forecast/webservice/json/v1?city=130010'
         api_data = requests.get(url).json()
         for weather in api_data['forecasts']:
@@ -69,6 +74,10 @@ def handle_message(event):
             weather_forecasts = weather['telop']
             print(weather_date + ':' + weather_forecasts)
         reply_text = api_data["description"]["text"]
+        """
+        reply_text = 'https://tenki.jp/forecast/9/46/8610/43100/10days.html'
+        
+
     else:
         reply_text = ai_message   
 
