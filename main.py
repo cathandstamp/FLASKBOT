@@ -97,6 +97,12 @@ def handle_message(event):
     elif push_text == "お話ししましょう":
         reply_text = "はい、よろしくお願いします。私はAIchatが搭載されています、色んな会話をして下さい。"   
 
+    elif push_text == "ごまはかわいい":
+        reply_text = "はい、その通りです。動画を撮り、家族で共有すべきだと思います。\nコロナのせいで、皆にあいにくいいま動画コンテンツは利用するべきです。"   
+
+    elif push_text == "転職したい”:
+        reply_text = "Let's　Action"   
+
 
 
     else:
