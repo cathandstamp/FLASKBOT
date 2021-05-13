@@ -65,7 +65,7 @@ def handle_message(event):
     ai_message = talk_ai(push_text)
 
 
-    if push_text == "天気":
+    if push_text == "熊本天気":
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
 
@@ -95,8 +95,8 @@ def handle_message(event):
         reply_text =  textA
         """
 
-    elif push_text == "お話ししましょう":
-        reply_text = "はい、よろしくお願いします。私はAIchatが搭載されています、色んな会話をして下さい。"   
+    elif push_text == "自己紹介":
+        reply_text = "猫の手も借りたいそんな、私にはAIchatが搭載されています、色んな会話をして下さい。"   
 
     elif push_text == "ごまはかわいい":
         reply_text = "はい、その通りです。動画を撮り、家族で共有すべきだと思います。コロナのせいで、皆にあいにくいいま動画コンテンツは利用するべきです。"   
