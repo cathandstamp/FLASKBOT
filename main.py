@@ -94,6 +94,10 @@ def handle_message(event):
 
         reply_text =  textA
         """
+    elif push_text == "お話ししましょう":
+        reply_text = "はい、よろしくお願いします。私はAIchatが搭載されています、色んな会話をして下さい。"   
+
+
 
     else:
         reply_text = ai_message   
