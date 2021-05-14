@@ -66,6 +66,7 @@ def handle_message(event):
 
 
     if push_text == "熊本天気":
+        reply_text = "気象庁のHPを確認します、少々お待ちください。"   
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
 
