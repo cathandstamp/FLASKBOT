@@ -102,7 +102,7 @@ def handle_message(event):
 
 
     elif push_text == "ごまはかわいい":
-        reply_text = "はい、その通りです。動画を撮り、家族で共有すべきだと思います。コロナのせいで、皆にあいにくいいま動画コンテンツは利用するべきです。"   
+        reply_text = "はい、その通りです。\n動画を撮り、家族で共有すべきだと思います。\nコロナのせいで、皆にあいにくいいま動画コンテンツは利用するべきです。"   
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
         reply_text = "お犬様は正義！"   
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
