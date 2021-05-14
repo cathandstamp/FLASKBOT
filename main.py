@@ -67,9 +67,6 @@ def handle_message(event):
 
     if push_text == "熊本天気":
        
-        reply_text = "気象庁のHPを確認します"   
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
-
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
 
@@ -103,9 +100,12 @@ def handle_message(event):
     elif push_text == "自己紹介":
         reply_text = "猫の手も借りたいそんな、私にはAIchatが搭載されています。\n色んな会話をして下さい。"   
 
+
     elif push_text == "ごまはかわいい":
         reply_text = "はい、その通りです。動画を撮り、家族で共有すべきだと思います。コロナのせいで、皆にあいにくいいま動画コンテンツは利用するべきです。"   
-      
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
+        reply_text = "お犬様は正義！"   
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
         
     elif push_text == "転職したい":
         reply_text = "Let's　Action"   
