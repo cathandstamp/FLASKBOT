@@ -107,7 +107,7 @@ def handle_message(event):
         A.append(reply_text)
         reply_text = "お犬様は正義！"   
         A.append(reply_text)
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=a[]))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=A))
         
     elif push_text == "転職したい":
         reply_text = "Let's　Action"   
