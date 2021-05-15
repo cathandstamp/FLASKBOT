@@ -76,11 +76,11 @@ def handle_message(event):
         found = soup.find_all('p',class_='weather-telop')
         found2 = soup.find_all('h3',class_='left-style')
 
-        
+        P=[]
         textA = found2[0].text + found[0].text +'\n'+found2[1].text + found[1].text
-        textA = '熊本の天気を気象庁からスクレイピングしてきました。\n'+textA
-
+        P.append['熊本の天気を気象庁からスクレイピングしてきました。',textA]
         reply_text =  textA
+        line_bot_api.reply_message(event.reply_token,[TextSendMessage(P[0]),TextSendMessage(P[1])])
         """
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
