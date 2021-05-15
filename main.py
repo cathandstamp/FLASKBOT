@@ -78,7 +78,7 @@ def handle_message(event):
 
         
         textA = found2[0].text + found[0].text +'\n'+found2[1].text + found[1].text
-        textA = '熊本の天気\n'+textA
+        textA = '熊本の天気を気象庁からスクレイピングしてきました。\n'+textA
 
         reply_text =  textA
         """
@@ -98,7 +98,7 @@ def handle_message(event):
 
 
     elif push_text == "自己紹介":
-        reply_text = "猫の手も借りたいそんな、私にはAIchatが搭載されています。\n色んな会話をして下さい。"   
+        reply_text = "初めまして、\n私にはAIchatがAPI連携で搭載されています。\n色んな会話をして下さい。"   
 
 
     elif push_text == "ごまはかわいい":        
@@ -107,7 +107,7 @@ def handle_message(event):
         A.append(reply_text)
         reply_text = "お犬様は正義！"   
         A.append(reply_text)
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=A.text))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(A[0]),TextSendMessage(A[1]))
         
     elif push_text == "転職したい":
         reply_text = "Let's　Action"   
