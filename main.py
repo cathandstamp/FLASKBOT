@@ -101,11 +101,13 @@ def handle_message(event):
         reply_text = "猫の手も借りたいそんな、私にはAIchatが搭載されています。\n色んな会話をして下さい。"   
 
 
-    elif push_text == "ごまはかわいい":
+    elif push_text == "ごまはかわいい":        
         reply_text = "はい、その通りです。\n動画を撮り、家族で共有すべきだと思います。\nコロナのせいで、皆にあいにくいいま動画コンテンツは利用するべきです。"   
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
+        A = []
+        A.append(reply_text)
         reply_text = "お犬様は正義！"   
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
+        A.append(reply_text)
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=a[]))
         
     elif push_text == "転職したい":
         reply_text = "Let's　Action"   
