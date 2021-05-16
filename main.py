@@ -82,7 +82,7 @@ def handle_message(event):
 
         reply_text =  textA
 
-        line_bot_api.reply_message(event.reply_token,[TextSendMessage('熊本の天気を気象庁からスクレイピングしてきました。',TextSendMessage(textA),TextSendMessage(found2[1].text + found[1].text)])
+        line_bot_api.reply_message(event.reply_token,[TextSendMessage('熊本の天気を気象庁からスクレイピングしてきました。'),TextSendMessage(textA),TextSendMessage(found2[1].text + found[1].text)])
         """
         url = 'https://tenki.jp/forecast/9/46/8610/43100/'
         res = requests.get(url)
@@ -134,6 +134,4 @@ if __name__ == "__main__":
 #    app.run()
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-
-
 
