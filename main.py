@@ -98,7 +98,7 @@ def handle_message(event):
 
 
     elif push_text == "自己紹介":
-        reply_text = "初めまして、\n私にはAIchatがAPI連携で搭載されています。\n色んな会話をして下さい。"   
+        reply_text = "初めまして。\n私にはAIchatがAPI連携で搭載されています。\n色んな会話をして下さい。"   
 
 
     elif push_text == "ごまはかわいい":        
